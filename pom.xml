@@ -7,6 +7,7 @@
     <groupId>io.github.tivecs.theolib</groupId>
     <artifactId>theo-lib</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
 
     <name>TheoLib</name>
 
@@ -47,9 +48,6 @@
                                     </excludes>
                                 </filter>
                             </filters>
-                            <outputFile>
-                                ../../Server/plugins/${project.artifactId}-${project.version}-shaded.jar
-                            </outputFile>
                         </configuration>
                     </execution>
                 </executions>
