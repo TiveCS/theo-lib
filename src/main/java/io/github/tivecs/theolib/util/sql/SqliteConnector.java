@@ -14,6 +14,12 @@ public class SqliteConnector extends SqlConnector {
 
     private Connection connection = null;
 
+    /**
+     * Create SQLite connector based on target dbFile to create JDBC URL.
+     * @param plugin target plugin
+     * @param dbFile target dbFile
+     * @param createIfNotExists if true, create target dbFile if not exists. if false not create specified dbFile.
+     */
     public SqliteConnector(JavaPlugin plugin, File dbFile, boolean createIfNotExists) {
         super(plugin);
         if (createIfNotExists && !dbFile.exists()){

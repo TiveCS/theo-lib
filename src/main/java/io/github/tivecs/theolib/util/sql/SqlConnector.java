@@ -25,6 +25,9 @@ public abstract class SqlConnector {
         this.plugin = plugin;
     }
 
+    /**
+     * Prepare connection based on created JDBC URL
+     */
     public abstract void init();
 
     public abstract Connection getConnection() throws SQLException;

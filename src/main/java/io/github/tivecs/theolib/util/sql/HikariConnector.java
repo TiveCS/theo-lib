@@ -11,9 +11,37 @@ public final class HikariConnector extends SqlConnector {
 
     private HikariDataSource hikari = null;
 
+    /**
+     * Create Hikari MySQL connector using plugin config.yml on path 'storage.sql'
+     * to create JDBC URL
+     * @param plugin target plugin config.yml
+     */
     public HikariConnector(JavaPlugin plugin) {
         super(plugin);
         readConfig();
+        init();
+    }
+
+    /**
+     * Create Hikari MySQL connector using given host, port, username, password and database
+     * to create JDBC URL
+     *
+     * @param plugin connector plugin
+     * @param host target mysql host
+     * @param port target mysql port
+     * @param username target mysql username
+     * @param password target mysql user's password
+     * @param database target database
+     */
+    public HikariConnector(JavaPlugin plugin, String host, String port, String username, String password, String database){
+        super(plugin);
+
+        setHost(host);
+        setPort(port);
+        setDatabase(database);
+        setPassword(password);
+        setUsername(username);
+
         init();
     }
 
